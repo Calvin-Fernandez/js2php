@@ -25,7 +25,7 @@ class Err extends Object {
     $error = new Err($str);
     $stack = debug_backtrace();
     while ($framesToPop--) {
-      array_shift($stack);
+      array_shift(&$stack);
     }
     $error->stack = $stack;
     return $error;

@@ -40,7 +40,7 @@ class Ex extends Exception {
       $value = $ex->value;
       if ($value instanceof Err) {
         $stack = $value->stack;
-        $frame = array_shift($stack);
+        $frame = array_shift(&$stack);
         if (isset($frame['file'])) {
           $output[] = $frame['file'] . "(" . $frame['line'] . ")\n";
         }

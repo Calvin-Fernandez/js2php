@@ -143,12 +143,12 @@ Buffer::$protoMethods = array(
       if ($count > 0) {
         //allow write(data, enc), write(data, enc, offset), write(data, enc, offset, length)
         if (is_string($args[0])) {
-          $enc = array_shift($args);
-          $offset = array_shift($args);
-          $len = array_shift($args);
+          $enc = array_shift(&$args);
+          $offset = array_shift(&$args);
+          $len = array_shift(&$args);
           //allow write(data, offset), write(data, offset, enc), write(data, offset, len), write(data, offset, enc, len)
         } else if (is_int_or_float($args[0])) {
-          $offset = array_shift($args);
+          $offset = array_shift(&$args);
           $enc = array_pop($args);
           $len = array_pop($args);
           //swap len/enc if necessary

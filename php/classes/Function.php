@@ -42,9 +42,9 @@ class Func extends Object {
     $this->proto = self::$protoObject;
     $args = func_get_args();
     if (gettype($args[0]) === 'string') {
-      $this->name = array_shift($args);
+      $this->name = array_shift(&$args);
     }
-    $this->fn = array_shift($args);
+    $this->fn = array_shift(&$args);
     $this->meta = isset($args[0]) ? $args[0] : array();
     $this->strict = isset($this->meta['strict']);
     $prototype = new Object();

@@ -266,7 +266,7 @@ Str::$protoMethods = array(
         return preg_replace($search, $replace, $str, $limit);
       } else {
         $parts = explode($search, $str);
-        $first = array_shift($parts);
+        $first = array_shift(&$parts);
         return $first . $replace . implode($search, $parts);
       }
     },
